@@ -47,7 +47,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh "cp -r /var/lib/jenkins/workspace/dev-pipeline/target/*war /opt/tomcat/webapps/"
             }
         }
     }
