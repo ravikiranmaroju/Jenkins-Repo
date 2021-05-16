@@ -1,0 +1,32 @@
+Install Java
+sudo yum -y install java-1.8.0-openjdk  java-1.8.0-openjdk-devel
+sudo alternatives --config java
+java -version
+
+Setjava Home if required
+https://computingforgeeks.com/how-to-set-java_home-on-centos-fedora-rhel/
+
+
+Install MariaDB
+https://computingforgeeks.com/install-mariadb-on-ubuntu-and-centos/
+
+ Add JFrog Artifactory RPM repository
+ curl -sL https://bintray.com/jfrog/artifactory-rpms/rpm | sudo tee /etc/yum.repos.d/bintray-jfrog-artifactory-rpms.repo
+ 
+ Install JFrog Artifactory
+ Install JFrog Artifactory OSS:
+
+sudo yum -y install jfrog-artifactory-oss wget
+Install JFrog Artifactory CE:
+
+sudo yum -y install jfrog-artifactory-cpp-ce wget 
+Set ARTIFACTORY_HOME.
+
+echo "export ARTIFACTORY_HOME=/opt/jfrog/artifactory" | sudo tee -a /etc/profile
+source /etc/profile
+env | grep ARTIFACTORY_HOME
+
+
+
+
+
