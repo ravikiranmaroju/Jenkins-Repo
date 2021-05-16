@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checkout the code from SCM..'
-                git credentialsId: 'cf9a1af8-441d-4015-ba43-350154b8ca6c', url: 'https://github.com/ravikiranmaroju/Jenkins-Repo.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '7616dfee-a19c-485a-9d3b-74924e87f231', url: 'https://github.com/ravikiranmaroju/Jenkins-Repo.git']]])
             }
         }
         stage('Prepare') {
